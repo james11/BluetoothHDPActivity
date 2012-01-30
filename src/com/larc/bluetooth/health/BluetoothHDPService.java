@@ -148,9 +148,8 @@ public class BluetoothHDPService extends Service {
 		mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 		if (mBluetoothAdapter == null || !mBluetoothAdapter.isEnabled()) {
 			// Bluetooth adapter isn't available. The client of the service is
-			// supposed to
-			// verify that it is available and activate before invoking this
-			// service.
+			// supposed to verify that it is available and activate before
+			// invoking this service.
 			stopSelf();
 			return;
 		}
