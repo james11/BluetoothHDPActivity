@@ -217,8 +217,7 @@ public class BluetoothHDPService extends Service {
 
 	private final BluetoothHealthCallback mHealthCallback = new BluetoothHealthCallback() {
 		// Callback to handle application registration and unregistration
-		// events. The service
-		// passes the status back to the UI client.
+		// events. The service passes the status back to the UI client.
 		public void onHealthAppConfigurationStatusChange(
 				BluetoothHealthAppConfiguration config, int status) {
 			if (status == BluetoothHealth.APP_CONFIG_REGISTRATION_FAILURE) {
@@ -238,10 +237,9 @@ public class BluetoothHDPService extends Service {
 
 		// Callback to handle channel connection state changes.
 		// Note that the logic of the state machine may need to be modified
-		// based on the HDP device.
-		// When the HDP device is connected, the received file descriptor is
-		// passed to the
-		// ReadThread to read the content.
+		// based on the HDP device. When the HDP device is connected, the
+		// received file descriptor is passed to the ReadThread to read the
+		// content.
 		public void onHealthChannelStateChange(
 				BluetoothHealthAppConfiguration config, BluetoothDevice device,
 				int prevState, int newState, ParcelFileDescriptor fd,
@@ -288,10 +286,9 @@ public class BluetoothHDPService extends Service {
 	}
 
 	// Thread to read incoming data received from the HDP device. This sample
-	// application merely
-	// reads the raw byte from the incoming file descriptor. The data should be
-	// interpreted using
-	// a health manager which implements the IEEE 11073-xxxxx specifications.
+	// application merely reads the raw byte from the incoming file descriptor.
+	// The data should be interpreted using a health manager which implements
+	// the IEEE 11073-xxxxx specifications.
 	private class ReadThread extends Thread {
 		private ParcelFileDescriptor mFd;
 
@@ -307,10 +304,9 @@ public class BluetoothHDPService extends Service {
 			try {
 				while (fis.read(data) > -1) {
 					// At this point, the application can pass the raw data to a
-					// parser that
-					// has implemented the IEEE 11073-xxxxx specifications.
-					// Instead, this sample
-					// simply indicates that some data has been received.
+					// parser that has implemented the IEEE 11073-xxxxx
+					// specifications. Instead, this sample simply indicates
+					// that some data has been received.
 					sendMessage(STATUS_READ_DATA, 0);
 				}
 			} catch (IOException ioe) {

@@ -163,12 +163,9 @@ public class BluetoothHDPActivity extends Activity {
 		});
 
 		// Initiates channel creation through {@link BluetoothHDPService}. Some
-		// devices will
-		// initiate the channel connection, in which case, it is not necessary
-		// to do this in the
-		// application. When pressed, the user is asked to select from one of
-		// the bonded devices
-		// to connect to.
+		// devices will initiate the channel connection, in which case, it is
+		// not necessary to do this in the application. When pressed, the user
+		// is asked to select from one of the bonded devices to connect to.
 		Button connectButton = (Button) findViewById(R.id.button_connect_channel);
 		connectButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
@@ -328,8 +325,7 @@ public class BluetoothHDPActivity extends Activity {
 
 	// Sends an update message, along with an HDP BluetoothDevice object, to
 	// {@link BluetoothHDPService}. The BluetoothDevice object is needed by the
-	// channel creation
-	// method.
+	// channel creation method.
 	private void sendMessageWithDevice(int what) {
 		if (mHealthService == null) {
 			Log.d(TAG, "Health Service not connected.");
